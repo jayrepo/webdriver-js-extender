@@ -55,7 +55,7 @@ export let getCurrentContext =
     new CommandDefinition<string>('getCurrentContext', [], 'GET', '/context');
 export let selectContext =
     new CommandDefinition<void>('selectContext', ['name'], 'POST', '/context');
-
+export let switchTab = new CommandDefinition<void>('switchTab', ['name'], 'POST', '/window');
 export let getScreenOrientation = new CommandDefinition<'LANDSCAPE'|'PORTRAIT'>(
     'getScreenOrientation', [], 'GET', '/orientation');
 export let setScreenOrientation = new CommandDefinition<void>(

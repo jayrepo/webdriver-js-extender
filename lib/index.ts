@@ -61,6 +61,8 @@ export interface ExtendedWebDriver extends WebDriver {
   // This implementation differs slightly, putting setters and getters into different methods
   selectContext: (name: string) => wdpromise.Promise<void>;
 
+  switchTab: (name: string) => wdpromise.Promise<void>;
+
   // See https://github.com/webdriverio/webdriverio/blob/v4.6.1/lib/protocol/contexts.js
   listContexts: () => wdpromise.Promise<string[]>;
 
