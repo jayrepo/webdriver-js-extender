@@ -38,6 +38,14 @@ exports.setAppiumSettings = new command_definition_1.CommandDefinition('setAppiu
 exports.getCurrentContext = new command_definition_1.CommandDefinition('getCurrentContext', [], 'GET', '/context');
 exports.selectContext = new command_definition_1.CommandDefinition('selectContext', ['name'], 'POST', '/context');
 exports.switchTab = new command_definition_1.CommandDefinition('switchTab', ['name'], 'POST', '/window');
+exports.flickNative = new command_definition_1.CommandDefinition('flickNative', ['actions'], 'POST', '/touch/perform', function (args) {
+    return [[
+            { action: 'press', options: { x: args[0], y: args[1] } },
+            { action: 'wait', options: { ms: args[4] } },
+            { action: 'moveTo', options: { x: args[2], y: args[3] } },
+            { action: 'release', options: {} },
+        ]];
+});
 exports.getScreenOrientation = new command_definition_1.CommandDefinition('getScreenOrientation', [], 'GET', '/orientation');
 exports.setScreenOrientation = new command_definition_1.CommandDefinition('setScreenOrientation', ['orientation'], 'POST', '/orientation', function (args) {
     var orientation = (args[0] || '').toUpperCase();

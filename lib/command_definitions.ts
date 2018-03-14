@@ -56,6 +56,16 @@ export let getCurrentContext =
 export let selectContext =
     new CommandDefinition<void>('selectContext', ['name'], 'POST', '/context');
 export let switchTab = new CommandDefinition<void>('switchTab', ['name'], 'POST', '/window');
+export let flickNative = new CommandDefinition<void>(
+    'flickNative', ['actions'], 'POST', '/touch/perform',
+    (args: [number, number, number, number, number]) => {
+      return [[
+        {action: 'press', options: {x: args[0], y: args[1]}},
+        {action: 'wait', options: {ms: args[4]}},
+        {action: 'moveTo', options: {x: args[2], y: args[3]}},
+        {action: 'release', options: {}},
+      ]];
+    });
 export let getScreenOrientation = new CommandDefinition<'LANDSCAPE'|'PORTRAIT'>(
     'getScreenOrientation', [], 'GET', '/orientation');
 export let setScreenOrientation = new CommandDefinition<void>(

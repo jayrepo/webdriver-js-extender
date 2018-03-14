@@ -63,6 +63,10 @@ export interface ExtendedWebDriver extends WebDriver {
 
   switchTab: (name: string) => wdpromise.Promise<void>;
 
+  flickNative:
+      (x: number, y: number, offset_x: number, offset_y: number,
+       duration: number) => wdpromise.Promise<void>;
+
   // See https://github.com/webdriverio/webdriverio/blob/v4.6.1/lib/protocol/contexts.js
   listContexts: () => wdpromise.Promise<string[]>;
 
