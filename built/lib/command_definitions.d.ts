@@ -21,6 +21,7 @@ export declare let getCurrentContext: CommandDefinition<string>;
 export declare let selectContext: CommandDefinition<void>;
 export declare let switchTab: CommandDefinition<void>;
 export declare let flickNative: CommandDefinition<void>;
+export declare let clickNative: CommandDefinition<void>;
 export declare let getScreenOrientation: CommandDefinition<"LANDSCAPE" | "PORTRAIT">;
 export declare let setScreenOrientation: CommandDefinition<void>;
 export declare let isDeviceLocked: CommandDefinition<boolean>;

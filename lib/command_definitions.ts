@@ -66,6 +66,14 @@ export let flickNative = new CommandDefinition<void>(
         {action: 'release', options: {}},
       ]];
     });
+export let clickNative = new CommandDefinition<void>(
+    'flickNative', ['actions'], 'POST', '/touch/perform', (args: [number, number]) => {
+      return [[
+        {action: 'press', options: {x: args[0], y: args[1]}},
+        {action: 'wait', options: {ms: 300}},
+        {action: 'release', options: {}},
+      ]];
+    });
 export let getScreenOrientation = new CommandDefinition<'LANDSCAPE'|'PORTRAIT'>(
     'getScreenOrientation', [], 'GET', '/orientation');
 export let setScreenOrientation = new CommandDefinition<void>(

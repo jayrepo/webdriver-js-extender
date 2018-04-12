@@ -24,6 +24,7 @@ export interface ExtendedWebDriver extends WebDriver {
     selectContext: (name: string) => wdpromise.Promise<void>;
     switchTab: (name: string) => wdpromise.Promise<void>;
     flickNative: (x: number, y: number, offset_x: number, offset_y: number, duration: number) => wdpromise.Promise<void>;
+    clickNative: (x: number, y: number) => wdpromise.Promise<void>;
     listContexts: () => wdpromise.Promise<string[]>;
     getScreenOrientation: () => wdpromise.Promise<'LANDSCAPE' | 'PORTRAIT'>;
     setScreenOrientation: (orientation: string) => wdpromise.Promise<void>;

@@ -46,6 +46,13 @@ exports.flickNative = new command_definition_1.CommandDefinition('flickNative', 
             { action: 'release', options: {} },
         ]];
 });
+exports.clickNative = new command_definition_1.CommandDefinition('flickNative', ['actions'], 'POST', '/touch/perform', function (args) {
+    return [[
+            { action: 'press', options: { x: args[0], y: args[1] } },
+            { action: 'wait', options: { ms: 300 } },
+            { action: 'release', options: {} },
+        ]];
+});
 exports.getScreenOrientation = new command_definition_1.CommandDefinition('getScreenOrientation', [], 'GET', '/orientation');
 exports.setScreenOrientation = new command_definition_1.CommandDefinition('setScreenOrientation', ['orientation'], 'POST', '/orientation', function (args) {
     var orientation = (args[0] || '').toUpperCase();
